@@ -1,0 +1,5 @@
+# Ignore the .idea directory
+.idea/
+
+# Ignore the virtual environment directory
+venv/

@@ -1,5 +1,6 @@
 from tkinter import *
 from brain import Brain
+import os
 
 FONT = ("Helvetica", 24, "bold")
 
@@ -8,22 +9,27 @@ brain = Brain()
 
 class Images:
     def __init__(self):
-        self.current_stage = PhotoImage(file="images/current_stage.png")
-        self.stage_box = PhotoImage(file="images/stage_square.png")
-        self.bg = PhotoImage(file="images/bg.png")
-        self.money_img = PhotoImage(file="images/money.png")
-        self.money1_img = PhotoImage(file="images/money1.png")
-        self.category_img = PhotoImage(file="images/category.png")
-        self.answers_screen_img = PhotoImage(file="images/screen.png")
-        self.add_button_img = PhotoImage(file="images/+.png")
-        self.minus_button_img = PhotoImage(file="images/-.png")
-        self.money_on_img = PhotoImage(file="images/bet.png")
-        self.wrong_img = PhotoImage(file="images/wrong.png")
-        self.correct_img = PhotoImage(file="images/correct.png")
-        self.lost_img = PhotoImage(file="images/bet_lost.png")
-        self.kept_img = PhotoImage(file="images/bet_kept.png")
-        self.drop_img = PhotoImage(file="images/drop.png")
-        self.undrop_img = PhotoImage(file="images/undrop.png")
+        base_path = os.path.dirname(__file__)
+
+        def img(name):
+            return PhotoImage(file=os.path.join(base_path, "images", name))
+
+        self.current_stage = img("current_stage.png")
+        self.stage_box = img("stage_square.png")
+        self.bg = img("bg.png")
+        self.money_img = img("money.png")
+        self.money1_img = img("money1.png")
+        self.category_img = img("category.png")
+        self.answers_screen_img = img("screen.png")
+        self.add_button_img = img("+.png")
+        self.minus_button_img = img("-.png")
+        self.money_on_img = img("bet.png")
+        self.wrong_img = img("wrong.png")
+        self.correct_img = img("correct.png")
+        self.lost_img = img("bet_lost.png")
+        self.kept_img = img("bet_kept.png")
+        self.drop_img = img("drop.png")
+        self.undrop_img = img("undrop.png")
 
 
 # Screen to show the current stage
